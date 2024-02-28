@@ -11,7 +11,7 @@ class Provinsi extends Model
 
 	protected $fillable = [
 		'name',
-		'longitude',
-		'latitude'
+		'latitude',
+		'longitude'
 	];
 }
