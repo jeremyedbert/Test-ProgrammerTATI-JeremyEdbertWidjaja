@@ -27,10 +27,10 @@
                     <a class="nav-link" href="#">Data Provinsi</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Predikat Kinerja</a>
+                    <a class="nav-link" href="{{ route('kinerja') }}">Predikat Kinerja</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Hello World!</a>
+                    <a class="nav-link" href="{{ route('helloworld') }}">Hello World!</a>
                 </li>
             </ul>
         </div>
