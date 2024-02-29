@@ -18,6 +18,10 @@ class KinerjaController extends Controller
 		$perilaku = $request->input('perilaku');
 		$output = "";
 
+		if ($hasil_kerja == "0" || $perilaku == "0") {
+			$output = "Pick the right parameter";
+			return redirect()->route('kinerja')->with(['error' => $output]);
+		}
 		if ($hasil_kerja == "1") {
 			if ($perilaku == "1") {
 				$output = "Sangat Kurang";

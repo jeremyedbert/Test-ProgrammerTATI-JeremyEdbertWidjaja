@@ -29,5 +29,11 @@
                 {{ session('success') }}
             </div>
         @endif
+        @if (session('error'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <b>Error! </b>
+                {{ session('error') }}
+            </div>
+        @endif
     </form>
 @endsection
