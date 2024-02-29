@@ -12,7 +12,7 @@
 
 <body>
     @include('partials.navbar')
-    <div style="margin-left: 3rem; margin-top: 3rem; margin-right: 3rem">
+    <div style="margin-left: 8rem; margin-top: 3rem; margin-right: 8rem">
         @yield('content')
     </div>
 </body>

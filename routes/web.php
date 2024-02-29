@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\dailylog\BlogController;
+use App\Http\Controllers\dailylog\LoginController;
 use App\Http\Controllers\helloworld\HelloWorldController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\kinerja\KinerjaController;
 use App\Http\Controllers\provinsi\ProvinsiController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\dailylog\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,10 +19,24 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-// Route::get('/', [HomeController]);
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/authenticate', [LoginController::class, 'authenticate'])->name('authenticate');
 // Soal 1
-Route::get('/list-user', [UserController::class, ''])->name('list-user');
+Route::resource('/user', UserController::class)->names([
+	'index' => 'user.index',
+]);
+Route::middleware(['auth', 'preventbackhistory'])->group(function () {
+	Route::resource('/log', BlogController::class)->names([
+		'index' => 'log.index',
+		'create' => 'log.create',
+		'store' => 'log.store',
+		'show' => 'log.show'
+	]);
+	Route::post('/log/{id}/accept', [BlogController::class, 'accept'])->name('accept');
+	Route::post('/log/{id}/reject', [BlogController::class, 'reject'])->name('reject');
+	Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+});
 // Soal 2
 Route::resource('/api/provinsi', ProvinsiController::class)->names([
 	'index' => 'provinsi.index',

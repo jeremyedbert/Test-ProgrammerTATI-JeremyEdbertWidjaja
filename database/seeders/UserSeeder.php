@@ -23,16 +23,16 @@ class UserSeeder extends Seeder
 			'username' => 'dianerlita',
 			'name' => 'Dian Erlita Febrina',
 			'role' => 'Kepala Bidang I',
-			'password' => bcrypt('dian')
+			'password' => bcrypt('dianerlita')
 		]);
 		User::create([
 			'username' => 'nikolaus',
 			'name' => 'Niko Laos',
 			'role' => 'Staff I',
-			'password' => bcrypt('niko')
+			'password' => bcrypt('nikolaus')
 		]);
 		User::create([
-			'username' => 'yosafatpramudya',
+			'username' => 'yosafat',
 			'name' => 'Yosafat Pramudya',
 			'role' => 'Kepala Bidang II',
 			'password' => bcrypt('yosafat')

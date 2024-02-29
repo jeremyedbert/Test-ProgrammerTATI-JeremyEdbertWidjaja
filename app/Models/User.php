@@ -46,6 +46,6 @@ class User extends Authenticatable
 
 	public function log()
 	{
-		return $this->hasMany(Log::class, 'user_id');
+		return $this->hasMany(Blog::class, 'user_id');
 	}
 }

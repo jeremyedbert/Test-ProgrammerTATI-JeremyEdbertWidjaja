@@ -48,13 +48,6 @@ class ProvinsiController extends Controller
 
 		Provinsi::create($validatedData);
 
-		// $province = new Provinsi();
-		// $province->name = $request->name;
-		// $province->latitude = $request->latitude;
-		// $province->longitude = $request->longitude;
-
-		// $storeProvince = $province->save();
-
 		return redirect()->route('provinsi.index')->with('success', 'Data ' . $request->name . " berhasil ditambahkan");
 	}
 
