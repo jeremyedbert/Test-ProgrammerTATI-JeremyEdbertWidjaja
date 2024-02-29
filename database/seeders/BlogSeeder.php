@@ -33,5 +33,15 @@ class BlogSeeder extends Seeder
 			'content' => 'Test log user_id 1',
 			'status' => 'Pending'
 		]);
+		Blog::create([
+			'user_id' => 4,
+			'content' => 'Test log user_id 44444',
+			'status' => 'Pending'
+		]);
+		Blog::create([
+			'user_id' => 5,
+			'content' => 'Test log user_id 555555 hahahaha',
+			'status' => 'Pending'
+		]);
 	}
 }
